@@ -66,6 +66,7 @@ class Square:
 
         Return position
         """
+        return self.__position
 
     @property
     def position(self, value):
