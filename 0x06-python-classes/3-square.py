@@ -32,10 +32,10 @@ class Square:
         else:
             self.__size = size
 
-        def area(self):
-            """
-            calculates current area of square
+    def area(self):
+        """
+        calculates current area of square
 
-            returns area
-            """
-            return (self.__size)**2
+        returns area
+        """
+        return (self.__size)**2
