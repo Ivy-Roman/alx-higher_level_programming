@@ -78,4 +78,4 @@ class Rectangle:
 
     def __repr__(self):
         """String representation to recreate new instance"""
-        return f"Rectangle({self.width},{self.height})"
+        return f"Rectangle({str(self.__width)},{str(self.__height)})"
