@@ -4,7 +4,7 @@ module - 1-rectangle
 """
 
 
-class Rectangle():
+class Rectangle:
     """
     Defines a rectangle with width and height
 
