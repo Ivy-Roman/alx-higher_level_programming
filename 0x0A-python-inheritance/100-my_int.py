@@ -17,14 +17,14 @@ class MyInt(int):
         """initialize num"""
         self.num = num
 
-    def __notequal__(self, other):
+    def __eq__(self, other):
         """
         Return:
            True if both not equal
         """
         return self.num != other
 
-    def __equal__(self, other):
+    def __ne__(self, other):
         """
         Return:
            True if both equal
