@@ -2,9 +2,7 @@
 # Defines a state model
 # Inherits from SQLAlchemy Base and links to the MySQL table states
 
-import sqlalchemy
-from sqlalchemy import create_engine
-from sqlalchemy.orm import declarative_base
+from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import Column, Integer, String
 
 Base = declarative_base()
