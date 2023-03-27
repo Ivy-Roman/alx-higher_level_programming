@@ -21,11 +21,12 @@ if __name__ == "__main__":
     # create cursor to execute queries
     # using SQL
     cur = db.cursor()
-    sql_cmd = """SELECT * FROM states WHERE name LIKE '{:s}' ORDER BY id ASC""".format(argv[4])
+    sql_cmd = """SELECT * FROM states WHERE name
+                 LIKE '{:s}'
+                 ORDER BY id ASC""".format(argv[4])
     cur.execute(sql_cmd)
     for row in cur.fetchall():
         if row[1] == argv[4]:
             print(row)
     cur.close()
     db.close()
-
