@@ -5,7 +5,7 @@ parameters given to script: username, password, database
 """
 
 from sys import argv
-from model_state import Base, State
+from model_state import State
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
@@ -15,12 +15,13 @@ if __name__ == "__main__":
     user = argv[1]
     passwd = argv[2]
     db = argv[3]
-    engine = create_engine(f'mysql+mysqldb://{user}:{passwd}@localhost/{db}', pool_pre_ping=True)
+    engine = create_engine(f'mysql+mysqldb://{user}:{passwd}@localhost/{db}',
+                           pool_pre_ping=True)
     Session = sessionmaker(bind=engine)
     session = Session()
 
     # query python instances in database
-    for instance in session.query(State).order_by(State.id):
-        print(f'{instance.id}:{instance.name}')
+    for state in session.query(State).order_by(State.id):
+        print(f'{state.id}: {state.name}')
 
     session.close()
