@@ -22,7 +22,8 @@ if __name__ == "__main__":
     session = Session()
 
     # query python instances in database
-    for query in session.query(State.name, City.id, City.name).filter(State.id == City.state_id).order_by(City.id):
+    for query in session.query(State.name, City.id, City.name).filter(
+        State.id == City.state_id).order_by(City.id):
         print(f'{query[0]}: ({query[1]}) {query[2]}')
 
     session.close()
