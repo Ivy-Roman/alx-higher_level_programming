@@ -5,7 +5,7 @@ parameters given to script: username, password, database
 """
 
 from sys import argv
-from relationship_state import State
+from relationship_state import Base, State
 from relationship_city import City
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
@@ -18,6 +18,7 @@ if __name__ == "__main__":
     db = argv[3]
     engine = create_engine(f'mysql+mysqldb://{user}:{passwd}@localhost/{db}',
                            pool_pre_ping=True)
+    Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
 
